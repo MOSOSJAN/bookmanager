@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/vaszol/bookmanager/controller/BookController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/ru/vaszol/bookmanager/domain/Book.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/ru/vaszol/bookmanager/repository/BookRepository.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/vaszol/bookmanager/validation/BookValidator.java" charset="UTF-8" />
   </component>
 </project>

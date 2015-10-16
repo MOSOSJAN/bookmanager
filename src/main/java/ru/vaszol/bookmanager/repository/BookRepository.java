@@ -18,7 +18,7 @@ public class BookRepository {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public void addContent(Book book){
+    public void addBook(Book book){
         this.sessionFactory.getCurrentSession().save(book);
     }
 
