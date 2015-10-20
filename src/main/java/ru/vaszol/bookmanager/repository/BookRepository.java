@@ -23,7 +23,9 @@ public class BookRepository {
     }
 
     public List<Book> listAll(){
-        return this.sessionFactory.getCurrentSession().createQuery("from Book")
+        return this.sessionFactory
+                .getCurrentSession()
+                .createQuery("from Book")
                 .list();
     }
 

@@ -1,6 +1,7 @@
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 <t:template>
   <form:form method="post" action="addBook" commandName="book">
@@ -15,7 +16,8 @@
       <tr>
         <td><form:label path="genre">
           Genre
-        </form:label></td>
+        </form:label>
+        </td>
         <td><form:input path="genre"/></td>
         <td><form:errors cssClass="error" path="genre"></form:errors> </td>
       </tr>

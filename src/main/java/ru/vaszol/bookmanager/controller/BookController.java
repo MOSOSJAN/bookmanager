@@ -1,6 +1,7 @@
 package ru.vaszol.bookmanager.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -39,12 +40,14 @@ public class BookController {
     }
 
     @RequestMapping(value = "addBook", method = RequestMethod.GET)
+    @PreAuthorize("isAuthenticated()")
     public String addBook(Model model){
         model.addAttribute("book", new Book());
         return "addBook";
     }
 
     @RequestMapping(value = "addBook", method = RequestMethod.POST)
+    @PreAuthorize("isAuthenticated()")
     public String addBook(@ModelAttribute("book") Book book, BindingResult bindingResult){
         this.bookValidator.validate(book, bindingResult);
 
@@ -57,6 +60,7 @@ public class BookController {
     }
 
     @RequestMapping(value = "deleteBook/{id}", method = RequestMethod.GET)
+    @PreAuthorize("hasRole('admin')")
     public String deleteBook(@PathVariable Integer id){
         this.bookRepository.removeBook(id);
         return "redirect:/";
